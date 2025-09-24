@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styled, { keyframes } from 'styled-components'
+import activities from './activities.json'
 
 const Header = styled.h1`
   font-family: 'Leckerli One', cursive;
@@ -54,15 +55,6 @@ const Result = styled.div`
 function App() {
   const [selected, setSelected] = useState(null)
   const [isSpinning, setIsSpinning] = useState(false)
-
-  const activities = [
-    { name: 'Activity1', number: 1 },
-    { name: 'Activity2', number: 2 },
-    { name: 'Activity3', number: 3 },
-    { name: 'Activity4', number: 4 },
-    { name: 'Activity5', number: 5 },
-    { name: 'Activity6', number: 6 }
-  ]
 
   const SPIN_MS = 3000
 
