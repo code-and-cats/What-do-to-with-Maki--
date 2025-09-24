@@ -84,13 +84,13 @@ function App() {
         />
 
         <CenterFace>
-          <FaceImg src="MakiSmile.png" alt="smiling pup face" />
+          <FaceImg src="MakiSmile.png" alt="smiling dog face" />
         </CenterFace>
       </WheelWrap>
 
       <Result>
         <div style={{ minWidth: 160, textAlign: 'center' }}>
-          {selected ? `${selected.name} !` : '—'}
+          {selected ? `${selected} !` : '—'}
         </div>
       </Result>
     </div>
