@@ -26,7 +26,7 @@ const WheelImg = styled.img`
   height: 340px;
 
   &.spinning {
-    animation: ${spinWheel} 3s ease-out forwards;
+    animation: ${spinWheel} 1.5s ease-out forwards;
   }
 `
 
@@ -56,7 +56,7 @@ function App() {
   const [selected, setSelected] = useState(null)
   const [isSpinning, setIsSpinning] = useState(false)
 
-  const SPIN_MS = 3000
+  const SPIN_MS = 1500
 
   const handleSpin = () => {
     if (isSpinning) return
