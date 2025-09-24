@@ -89,9 +89,19 @@ function App() {
       </WheelWrap>
 
       <Result>
-        <div style={{ minWidth: 160, textAlign: 'center' }}>
-          {selected ? `${selected} !` : '—'}
-        </div>
+        {selected ? (
+          <>
+            <div>{selected.name}</div>
+            {selected.status && (
+              <div
+                style={{ fontSize: '18px', color: '#666', marginTop: '8px' }}>
+                Status: {selected.status}
+              </div>
+            )}
+          </>
+        ) : (
+          ''
+        )}
       </Result>
     </div>
   )

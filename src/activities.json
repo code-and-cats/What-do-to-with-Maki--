@@ -1,1 +1,26 @@
-["Activity1", "Activity2", "Activity3", "Activity4", "Activity5", "Activity6"]
+[
+  { "name": "Backa", "status": "jobba med avstånd" },
+  { "name": "Backa med rumpan mot", "status": "inlärning" },
+  { "name": "Bakbenstarget", "status": "inlärning" },
+  { "name": "Buga", "status": "håll position" },
+  { "name": "Flaxövning", "status": "inlärning" },
+  { "name": "Frambenstarget", "status": "skicka till" },
+  { "name": "Front", "status": "" },
+  { "name": "Frysmarkering spårpinne", "status": "" },
+  { "name": "Gå runt föraren", "status": "inlärning" },
+  { "name": "Hämta föremål", "status": "" },
+  { "name": "Kryp", "status": "inlärning" },
+  { "name": "Ligg på sidan", "status": "" },
+  { "name": "Loss", "status": "" },
+  { "name": "Låt vara", "status": "inlärning" },
+  { "name": "Mattan och högen", "status": "längre mellan belöning/gå iväg" },
+  { "name": "Mellan", "status": "börja fasa ut hand" },
+  { "name": "Mitt-mitt", "status": "ta några steg framåt/bakåt" },
+  { "name": "Nicka", "status": "inlärning" },
+  { "name": "Runda", "status": "gå hela cirkeln" },
+  { "name": "Sitt fint", "status": "börja fasa ut lockande" },
+  { "name": "Snurra", "status": "jobba med avstånd" },
+  { "name": "Turn", "status": "inlärning" },
+  { "name": "Under", "status": "inlärning" },
+  { "name": "Viska", "status": "inlärning" }
+]
