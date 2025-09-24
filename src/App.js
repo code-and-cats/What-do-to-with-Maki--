@@ -1,6 +1,5 @@
-import './App.css'
 import React, { useState } from 'react'
-import styled, { keyframes, css } from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
 const Header = styled.h1`
   font-family: 'Leckerli One', cursive;
@@ -10,25 +9,24 @@ const Header = styled.h1`
   color: #8f1fab;
 `
 
-// face image — no spin
+// Makis Fejs
 const FaceImg = styled.img`
   width: 100px;
 `
 
 // keyframes for wheel spin
-const spinOnce = keyframes`
+const spinWheel = keyframes`
   from { transform: rotate(0deg); }
-  to   { transform: rotate(1080deg); } /* 3 full turns */
+  to   { transform: rotate(1080deg); }
 `
 
 const WheelImg = styled.img`
   width: 340px;
   height: 340px;
-  ${(props) =>
-    props.spinning &&
-    css`
-      animation: ${spinOnce} 3s ease-out forwards;
-    `}
+
+  &.spinning {
+    animation: ${spinWheel} 3s ease-out forwards;
+  }
 `
 
 const WheelWrap = styled.div`
@@ -43,15 +41,14 @@ const CenterFace = styled.div`
   inset: 0;
   display: grid;
   place-items: center;
-  pointer-events: none; /* clicks pass through */
+  pointer-events: none;
 `
 
-const Controls = styled.div`
-  margin-top: 16px;
-  display: flex;
-  gap: 8px;
-  justify-content: center;
-  align-items: center;
+const Result = styled.div`
+  font-family: 'Lato', sans-serif;
+  margin-top: 24px;
+  font-size: 24px;
+  font-weight: 600;
 `
 
 function App() {
@@ -67,10 +64,10 @@ function App() {
     { name: 'Activity6', number: 6 }
   ]
 
-  const SPIN_MS = 3000 // spin duration
+  const SPIN_MS = 3000
 
   const handleSpin = () => {
-    if (isSpinning) return // ignore clicks while spinning
+    if (isSpinning) return
     setSelected(null)
     setIsSpinning(true)
 
@@ -79,7 +76,6 @@ function App() {
     setTimeout(() => {
       setIsSpinning(false)
       setSelected(choice)
-      console.log('Chosen:', choice)
     }, SPIN_MS)
   }
 
@@ -89,9 +85,9 @@ function App() {
 
       <WheelWrap>
         <WheelImg
-          src="depositphotos_103734284-stock-photo-wheel-fortune-5-area.png"
+          src="wheel.png"
           alt="wheel"
-          spinning={isSpinning}
+          className={isSpinning ? 'spinning' : ''}
           onClick={handleSpin}
         />
 
@@ -100,14 +96,11 @@ function App() {
         </CenterFace>
       </WheelWrap>
 
-      <Controls>
-        <button onClick={handleSpin} disabled={isSpinning}>
-          {isSpinning ? 'Spinning...' : 'Spin'}
-        </button>
+      <Result>
         <div style={{ minWidth: 160, textAlign: 'center' }}>
-          {selected ? `Next: ${selected.name}` : '—'}
+          {selected ? `${selected.name} !` : '—'}
         </div>
-      </Controls>
+      </Result>
     </div>
   )
 }
